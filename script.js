@@ -29,12 +29,24 @@ function somar() {
 }
 
 // Função para atualizar o histórico exibido na página
-function atualizarHistorico() {
-    historyList.innerHTML = '';
-    historico.forEach(function (item) {
-        var li = document.createElement('');
-        li.textContent = item.expressao + ' = ' + item.resultado;
-        historyList.appendChild(li);
+function atualizarHistorico() {  
+    document.querySelector('.historico');
+
+    const historico = document.getElementById('historico');
+    const novaEntrada = document.createElement('.div');
+    novaEntrada.textContent = "Nova entrada de histórico"; 
+  
+    historico.appendChild(novaEntrada);
+  }
+
+  
+
+document.addEventListener('DOMContentLoaded', function () {
+    const elementoLista = document.querySelector('#historico div');
+    elementoLista.addEventListener('click', function () {
+      atualizarHistorico();
     });
-}
+  });
+
+
   
